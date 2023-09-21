@@ -50,3 +50,6 @@ app.post('/post', async function (req, res) {
 app.listen(3009, function (req, res) {
     console.log("Server is running at port 3000");
 });
+
+app.use('/.netlify/functions/api', router);
+module.exports.handler = serverless(app)
